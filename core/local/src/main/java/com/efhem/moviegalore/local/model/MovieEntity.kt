@@ -2,9 +2,11 @@ package com.efhem.moviegalore.local.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.efhem.moviegalore.model.Movie
+import com.efhem.moviegalore.model.MovieCategory
 
 @Entity(tableName = "movie")
-data class MovieEntity (
+data class MovieEntity(
     @PrimaryKey
     val id: Int,
     val adult: Boolean,
@@ -18,5 +20,24 @@ data class MovieEntity (
     val voteCount: Int,
     val video: Boolean,
     val voteAverage: Double,
-    val isFavourite: Boolean = false
+    val isFavourite: Boolean = false,
+    val category: MovieCategory
+)
+
+
+fun MovieEntity.asExternalModel() = Movie(
+    this.id,
+    this.adult,
+    this.overview,
+    this.releaseDate,
+    this.originalTitle,
+    this.originalLanguage,
+    this.title,
+    this.backdropPath,
+    this.popularity,
+    this.voteCount,
+    this.video,
+    this.voteAverage,
+    this.isFavourite,
+    this.category
 )

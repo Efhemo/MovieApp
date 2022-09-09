@@ -4,10 +4,10 @@ import com.efhem.moviegalore.network.model.NetworkTrailerResponse
 import com.efhem.moviegalore.network.retrofit.RetrofitNetworkApi
 import javax.inject.Inject
 
-public class MovieTrailerRepositoryImp @Inject constructor(
+public class MovieTrailerDataSourceImp @Inject constructor(
     private val api: RetrofitNetworkApi,
     private val apiKey: String
-): MovieTrailerRepository {
+): MovieTrailerDataSource {
 
     public override fun getMovieTrailer(
         id: Int,

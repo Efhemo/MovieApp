@@ -5,8 +5,6 @@ import Dependencies.View
 import Dependencies.Coroutines
 import Dependencies.Test
 import Dependencies.Compose
-import ProjectLib.data
-import ProjectLib.domain
 
 plugins {
     androidApplication
@@ -84,7 +82,6 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.5.21")
 
-    implementation(project(domain))
 
     implementAll(Coroutines.components)
     implementAll(View.components)

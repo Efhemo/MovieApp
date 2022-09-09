@@ -38,6 +38,9 @@ dependencies {
 
     implementAll(Coroutines.components)
 
+    implementation(project(ProjectLib.model))
+    implementation(project(ProjectLib.network))
+    implementation(project(ProjectLib.local))
 
     implementation(DI.daggerHiltAndroid)
     kapt(DI.AnnotationProcessor.daggerHilt)

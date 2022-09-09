@@ -10,10 +10,10 @@ import retrofit2.http.Query
 
 public interface RetrofitNetworkApi {
     @GET("movie/popular")
-    public fun getPopularMovies(@Query("api_key") apiKey: String?): NetworkMovieResponse
+    public fun getPopularMovies(@Query("api_key") apiKey: String?, @Query("page") page: Int ): NetworkMovieResponse
 
     @GET("movie/top_rated")
-    public fun getTopRatedMovies(@Query("api_key") apiKey: String?): NetworkMovieResponse
+    public fun getTopRatedMovies(@Query("api_key") apiKey: String, @Query("page") page: Int): NetworkMovieResponse
 
     @GET("movie/{movie_id}/videos")
     public fun getMovieTrailer(

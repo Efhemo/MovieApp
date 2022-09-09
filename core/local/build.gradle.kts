@@ -41,6 +41,8 @@ dependencies {
     implementation(Cache.room)
     implementAll(Coroutines.components)
 
+    implementation(project(ProjectLib.model))
+
     kapt(Cache.AnnotationProcessor.room)
     kapt(DI.AnnotationProcessor.daggerHilt)
 }

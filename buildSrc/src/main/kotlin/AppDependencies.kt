@@ -1,4 +1,3 @@
-
 const val kotlinAndroid: String = "android"
 const val kotlinAndroidExtension: String = "android.extensions"
 const val kotlinKapt: String = "kapt"
@@ -53,7 +52,7 @@ object Dependencies {
 
 
         override val components: List<String>
-            get() = listOf (
+            get() = listOf(
                 coreKtx, navigationFragmentKtx, navigationUiKtx, multiDex, activity,
                 lifeCycleCommon, viewModel, livedata
             )
@@ -139,19 +138,29 @@ object Dependencies {
         }
 
 
-        private const val composeActivity: String = "androidx.activity:activity-compose:${Version.activityCompose}"
-        private const val composeMaterial: String = "androidx.compose.material:material:${Version.composeVersion}"
-        private const val composeAnimation: String = "androidx.compose.animation:animation:${Version.composeVersion}"
-        private const val composeUITool: String = "androidx.compose.ui:ui-tooling:${Version.composeVersion}"
-        private const val composeNavigation: String = "androidx.navigation:navigation-compose:${Version.composeNavigation}"
-        private const val composeViewModel: String = "androidx.lifecycle:lifecycle-viewmodel-compose:${Version.composeViewModel}"
-        private const val composeHiltNavigation: String = "androidx.hilt:hilt-navigation-compose:${Version.composeHiltNavigation}"
-        private const val accompanistSwipeRefresh: String = "com.google.accompanist:accompanist-swiperefresh:${Version.accompanistSwipeRefresh}"
+        private const val composeActivity: String =
+            "androidx.activity:activity-compose:${Version.activityCompose}"
+        private const val composeMaterial: String =
+            "androidx.compose.material:material:${Version.composeVersion}"
+        private const val composeAnimation: String =
+            "androidx.compose.animation:animation:${Version.composeVersion}"
+        private const val composeUITool: String =
+            "androidx.compose.ui:ui-tooling:${Version.composeVersion}"
+        private const val composeNavigation: String =
+            "androidx.navigation:navigation-compose:${Version.composeNavigation}"
+        private const val composeViewModel: String =
+            "androidx.lifecycle:lifecycle-viewmodel-compose:${Version.composeViewModel}"
+        private const val composeHiltNavigation: String =
+            "androidx.hilt:hilt-navigation-compose:${Version.composeHiltNavigation}"
+        private const val accompanistSwipeRefresh: String =
+            "com.google.accompanist:accompanist-swiperefresh:${Version.accompanistSwipeRefresh}"
 
 
         override val components: List<String> =
-            listOf(composeActivity, composeMaterial, composeAnimation, composeUITool,
-                composeNavigation, composeViewModel, composeHiltNavigation, accompanistSwipeRefresh )
+            listOf(
+                composeActivity, composeMaterial, composeAnimation, composeUITool,
+                composeNavigation, composeViewModel, composeHiltNavigation, accompanistSwipeRefresh
+            )
     }
 
     object Network : Libraries {
@@ -206,12 +215,17 @@ object Dependencies {
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Coroutines.Version.coroutines}"
         const val mockWebServer: String =
             "com.squareup.okhttp3:mockwebserver:${Version.mockWebServer}"
-        const val composeUITests: String = "androidx.compose.ui:ui-test-junit4:${Version.composeTest}"
-        const val composeUIManifestTests: String = "androidx.compose.ui:ui-test-manifest:${Version.composeTest}"
+        const val composeUITests: String =
+            "androidx.compose.ui:ui-test-junit4:${Version.composeTest}"
+        const val composeUIManifestTests: String =
+            "androidx.compose.ui:ui-test-manifest:${Version.composeTest}"
     }
 }
 
 object ProjectLib {
-    const val domain: String = ":domain"
-    const val data: String = ":data"
+    const val local: String = ":core:local"
+    const val network: String = ":core:network"
+    const val data: String = ":core:data"
+    const val model: String = ":core:model"
+
 }

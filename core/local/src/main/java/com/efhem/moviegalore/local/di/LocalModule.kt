@@ -3,6 +3,8 @@ package com.efhem.moviegalore.local.di
 import android.content.Context
 import com.efhem.moviegalore.local.room.MovieDao
 import com.efhem.moviegalore.local.room.MovieGaloreDatabase
+import com.efhem.moviegalore.local.storage.Storage
+import com.efhem.moviegalore.local.storage.StorageImp
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,5 +23,10 @@ internal object LocalModule {
     @[Provides Singleton]
     fun provideMovieDao(movieGaloreDatabase: MovieGaloreDatabase): MovieDao {
         return movieGaloreDatabase.movieDao
+    }
+
+    @[Provides Singleton]
+    fun provideStorage(@ApplicationContext context: Context): Storage {
+        return StorageImp(context)
     }
 }
