@@ -159,6 +159,7 @@ object Dependencies {
             const val okhttp: String = "5.0.0-alpha.2"
             const val retrofit: String = "2.9.0"
             const val moshi: String = "1.9.2"
+            const val kotlinSerialization: String = "1.3.2"
         }
 
         object AnnotationProcessor {
