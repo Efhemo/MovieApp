@@ -1,5 +1,7 @@
 import Dependencies.DI
 import Dependencies.Coroutines
+import Dependencies.Test
+
 
 plugins {
     androidLibrary
@@ -44,4 +46,8 @@ dependencies {
 
     implementation(DI.daggerHiltAndroid)
     kapt(DI.AnnotationProcessor.daggerHilt)
+
+    testImplementation(Test.junit)
+    testImplementation(Test.truth)
+    testImplementation(Test.coroutinesTest)
 }

@@ -202,6 +202,7 @@ object Dependencies {
             const val archCoreTest: String = "1.1.1"
             const val mockWebServer: String = "4.9.2"
             const val composeTest: String = "1.0.1"
+            const val turbine: String = "0.8.0"
 
         }
 
@@ -219,6 +220,8 @@ object Dependencies {
             "androidx.compose.ui:ui-test-junit4:${Version.composeTest}"
         const val composeUIManifestTests: String =
             "androidx.compose.ui:ui-test-manifest:${Version.composeTest}"
+        const val turbine: String =
+            "app.cash.turbine:${Version.turbine}"
     }
 }
 
