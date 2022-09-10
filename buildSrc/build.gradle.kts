@@ -20,9 +20,10 @@ compileKotlin.kotlinOptions {
 
 object Plugin {
     object Version {
-        const val kotlin: String = "1.5.21"
+        const val kotlin: String = "1.7.0"
         const val androidGradle: String = "7.0.0"
-        const val daggerHiltAndroid: String = "2.38.1"
+        const val navigation: String = "2.5.0"
+        const val daggerHiltAndroid: String = "2.42"
     }
 
     const val kotlin: String = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.kotlin}"

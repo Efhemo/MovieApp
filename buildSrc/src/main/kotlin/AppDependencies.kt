@@ -2,7 +2,7 @@ const val kotlinAndroid: String = "android"
 const val kotlinAndroidExtension: String = "android.extensions"
 const val kotlinKapt: String = "kapt"
 const val ktLintVersion: String = "0.36.0"
-const val kotlinVersion = "1.5.21"
+const val kotlinVersion = "1.7.0"
 
 
 object Config {
@@ -115,6 +115,7 @@ object Dependencies {
     object Coroutines : Libraries {
         object Version {
             const val coroutines: String = "1.6.3"
+            const val dateTime: String = "0.4.0"
         }
 
         const val core: String =
@@ -214,6 +215,8 @@ object Dependencies {
         const val truth: String = "com.google.truth:truth:${Version.truth}"
         const val coroutinesTest: String =
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Coroutines.Version.coroutines}"
+        const val kotlinDateTime: String =
+            "org.jetbrains.kotlinx:kotlinx-datetime:${Coroutines.Version.dateTime}"
         const val mockWebServer: String =
             "com.squareup.okhttp3:mockwebserver:${Version.mockWebServer}"
         const val composeUITests: String =
@@ -221,7 +224,7 @@ object Dependencies {
         const val composeUIManifestTests: String =
             "androidx.compose.ui:ui-test-manifest:${Version.composeTest}"
         const val turbine: String =
-            "app.cash.turbine:${Version.turbine}"
+            "app.cash.turbine:turbine:${Version.turbine}"
     }
 }
 

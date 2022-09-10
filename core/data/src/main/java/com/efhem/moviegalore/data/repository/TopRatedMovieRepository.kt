@@ -8,7 +8,7 @@ import com.efhem.moviegalore.local.room.MovieDao
 import com.efhem.moviegalore.local.storage.Storage
 import com.efhem.moviegalore.model.Movie
 import com.efhem.moviegalore.model.MovieCategory
-import com.efhem.moviegalore.network.datasource.MovieNetworkDataSource
+import com.efhem.moviegalore.network.datasourceimp.MovieNetworkDataSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map

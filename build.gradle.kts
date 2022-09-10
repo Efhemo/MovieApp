@@ -2,9 +2,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
     repositories.applyDefault()
-    dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
-    }
 }
 
 allprojects {
@@ -22,8 +19,6 @@ subprojects {
     tasks.withType<KotlinCompile>().configureEach {
         with(kotlinOptions) {
             jvmTarget = JavaVersion.VERSION_1_8.toString()
-            languageVersion = "1.5"
-            apiVersion = "1.5"
             freeCompilerArgs += "-Xuse-experimental=" +
                     "kotlin.Experimental," +
                     "kotlinx.coroutines.ExperimentalCoroutinesApi," +

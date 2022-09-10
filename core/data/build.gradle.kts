@@ -47,7 +47,9 @@ dependencies {
     implementation(DI.daggerHiltAndroid)
     kapt(DI.AnnotationProcessor.daggerHilt)
 
+    testImplementation(Test.turbine)
     testImplementation(Test.junit)
     testImplementation(Test.truth)
     testImplementation(Test.coroutinesTest)
+    testImplementation(Test.kotlinDateTime)
 }
