@@ -15,7 +15,7 @@ data class MovieEntity(
     val originalTitle: String,
     val originalLanguage: String,
     val title: String,
-    val backdropPath: String,
+    val backdropPath: String?,
     val popularity: Double,
     val voteCount: Int,
     val video: Boolean,

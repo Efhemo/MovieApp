@@ -28,9 +28,9 @@ class TestMovieNetworkDataSource : MovieNetworkDataSource {
         totalResults = 1341232
     )
 
-    override fun getPopularMovies(page: Int): NetworkMovieResponse = response
+    override suspend fun getPopularMovies(page: Int): NetworkMovieResponse = response
 
-    override fun getTopRatedMovies(page: Int): NetworkMovieResponse = response
+    override suspend fun getTopRatedMovies(page: Int): NetworkMovieResponse = response
 
 
 }

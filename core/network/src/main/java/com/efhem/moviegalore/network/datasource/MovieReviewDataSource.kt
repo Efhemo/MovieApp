@@ -10,7 +10,7 @@ public class MovieReviewDataSourceImp @Inject constructor(
     private val apiKey: String
 ): MovieReviewDataSource {
 
-    public override fun getReviewResponse(
+    public override suspend fun getReviewResponse(
         id: Int,
     ): NetworkMovieReviewResponse {
         return api.getReviewResponse(id, apiKey)

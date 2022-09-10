@@ -9,7 +9,7 @@ public class MovieTrailerDataSourceImp @Inject constructor(
     private val apiKey: String
 ): MovieTrailerDataSource {
 
-    public override fun getMovieTrailer(
+    public override suspend fun getMovieTrailer(
         id: Int,
     ): NetworkTrailerResponse {
         return api.getMovieTrailer(id, apiKey)

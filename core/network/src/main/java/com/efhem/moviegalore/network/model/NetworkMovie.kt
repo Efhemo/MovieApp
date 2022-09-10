@@ -21,7 +21,7 @@ public data class NetworkMovie(
     val originalLanguage: String,
     val title: String,
     @Json(name = "backdrop_path")
-    val backdropPath: String,
+    val backdropPath: String?,
     val popularity: Double,
     @Json(name = "vote_count")
     val voteCount: Int,

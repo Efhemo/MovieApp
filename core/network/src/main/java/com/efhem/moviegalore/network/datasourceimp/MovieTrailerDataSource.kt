@@ -4,7 +4,7 @@ import com.efhem.moviegalore.network.model.NetworkTrailerResponse
 
 public interface MovieTrailerDataSource {
 
-    public fun getMovieTrailer(
+    public suspend fun getMovieTrailer(
         id: Int,
     ): NetworkTrailerResponse
 }
