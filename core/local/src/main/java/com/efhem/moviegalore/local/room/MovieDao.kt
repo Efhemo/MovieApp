@@ -21,5 +21,5 @@ interface MovieDao {
     fun movieStream(id: Int): Flow<MovieEntity>
 
     @Query("UPDATE movie SET isFavourite = :isFavourite WHERE id = :id")
-    suspend fun toggleFavourite(id: Int, isFavourite: Boolean): Flow<List<MovieEntity>>
+    fun toggleFavourite(id: Int, isFavourite: Boolean): Int
 }

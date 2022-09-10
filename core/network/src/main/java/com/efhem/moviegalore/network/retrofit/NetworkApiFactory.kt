@@ -1,6 +1,6 @@
 package com.efhem.moviegalore.network.retrofit
 
-import com.efhem.creditscore.data.interceptor.NoInternetInterceptor
+import com.efhem.moviegalore.network.interceptor.NoInternetInterceptor
 import com.efhem.moviegalore.network.interceptor.HttpsInterceptor
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient

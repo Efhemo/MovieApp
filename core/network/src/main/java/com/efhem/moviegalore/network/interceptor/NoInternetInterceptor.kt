@@ -1,4 +1,4 @@
-package com.efhem.creditscore.data.interceptor
+package com.efhem.moviegalore.network.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Response
@@ -9,7 +9,7 @@ import java.net.UnknownHostException
 import kotlin.reflect.KClass
 
 
-object NoInternetInterceptor : Interceptor {
+public object NoInternetInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
 
