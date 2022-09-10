@@ -8,8 +8,8 @@ const val kotlinVersion = "1.7.0"
 object Config {
     object Version {
         const val minSdkVersion: Int = 21
-        const val compileSdkVersion: Int = 31
-        const val targetSdkVersion: Int = 31
+        const val compileSdkVersion: Int = 33
+        const val targetSdkVersion: Int = 33
         const val versionName: String = "1.0"
         const val versionCode: Int = 1
     }
@@ -129,39 +129,31 @@ object Dependencies {
 
     object Compose : Libraries {
         object Version {
-            const val activityCompose = "1.3.1"
-            const val composeVersion = "1.0.1"
-            const val composeViewModel = "2.4.0-rc01"
-            const val composeNavigation = "2.4.0-alpha10"
-            const val composeHiltNavigation = "1.0.0-alpha03"
-            const val accompanistSwipeRefresh = "0.21.2-beta"
+
+            const val activityCompose = "1.5.1"
+            const val androidxCompose = "1.3.0-beta02"
+            const val androidxComposeRuntimeTracing = "1.0.0-alpha01"
+            const val androidxComposeCompiler = "1.3.1"
+            const val androidxComposeMaterial3 = "1.0.0-alpha13"
+            const val androidxHiltNavigationCompose = "1.0.0"
+            const val composeViewModel = "2.6.0-alpha01"
 
         }
 
-
-        private const val composeActivity: String =
-            "androidx.activity:activity-compose:${Version.activityCompose}"
-        private const val composeMaterial: String =
-            "androidx.compose.material:material:${Version.composeVersion}"
-        private const val composeAnimation: String =
-            "androidx.compose.animation:animation:${Version.composeVersion}"
-        private const val composeUITool: String =
-            "androidx.compose.ui:ui-tooling:${Version.composeVersion}"
-        private const val composeNavigation: String =
-            "androidx.navigation:navigation-compose:${Version.composeNavigation}"
-        private const val composeViewModel: String =
-            "androidx.lifecycle:lifecycle-viewmodel-compose:${Version.composeViewModel}"
-        private const val composeHiltNavigation: String =
-            "androidx.hilt:hilt-navigation-compose:${Version.composeHiltNavigation}"
-        private const val accompanistSwipeRefresh: String =
-            "com.google.accompanist:accompanist-swiperefresh:${Version.accompanistSwipeRefresh}"
-
+        private const val composeActivity: String = "androidx.activity:activity-compose:${Version.activityCompose}"
+        private const val androidxComposeFoundation: String = "androidx.compose.foundation:foundation:${Version.androidxCompose}"
+        private const val androidxComposeFoundationLayout: String = "androidx.compose.foundation:foundation-layout:${Version.androidxCompose}"
+        private const val composeMaterial3: String = "androidx.compose.material3:material3:${Version.androidxComposeMaterial3}"
+        private const val composeRuntime: String = "androidx.compose.runtime:runtime:${Version.androidxCompose}"
+        private const val composeUITool: String = "androidx.compose.ui:ui-tooling:${Version.androidxCompose}"
+        private const val composeUIToolPreview: String = "androidx.compose.ui:ui-tooling-preview:${Version.androidxCompose}"
+        private const val composeHiltNavigation: String = "androidx.hilt:hilt-navigation-compose:${Version.androidxHiltNavigationCompose}"
+        private const val composeViewModel: String = "androidx.lifecycle:lifecycle-viewmodel-compose:${Version.composeViewModel}"
+        private const val composeAnimation: String = "androidx.compose.animation:animation:${Version.androidxCompose}"
 
         override val components: List<String> =
-            listOf(
-                composeActivity, composeMaterial, composeAnimation, composeUITool,
-                composeNavigation, composeViewModel, composeHiltNavigation, accompanistSwipeRefresh
-            )
+            listOf(composeActivity, androidxComposeFoundation, androidxComposeFoundationLayout, composeMaterial3,
+                composeRuntime, composeUITool, composeUIToolPreview, composeHiltNavigation, composeViewModel, composeAnimation )
     }
 
     object Network : Libraries {
