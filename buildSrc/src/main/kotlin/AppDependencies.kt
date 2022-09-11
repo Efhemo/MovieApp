@@ -225,5 +225,6 @@ object ProjectLib {
     const val network: String = ":core:network"
     const val data: String = ":core:data"
     const val model: String = ":core:model"
+    const val featureMovie: String = ":feature:movie"
 
 }

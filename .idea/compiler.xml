@@ -7,6 +7,8 @@
       <module name="MovieGalore.core.data" target="11" />
       <module name="MovieGalore.core.local" target="11" />
       <module name="MovieGalore.data.local" target="11" />
+      <module name="MovieGalore.feature.movie" target="11" />
+      <module name="MovieGalore.movie" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
