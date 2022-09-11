@@ -127,35 +127,6 @@ object Dependencies {
     }
 
 
-    object Compose : Libraries {
-        object Version {
-
-            const val activityCompose = "1.5.1"
-            const val androidxCompose = "1.3.0-beta02"
-            const val androidxComposeRuntimeTracing = "1.0.0-alpha01"
-            const val androidxComposeCompiler = "1.3.1"
-            const val androidxComposeMaterial3 = "1.0.0-alpha13"
-            const val androidxHiltNavigationCompose = "1.0.0"
-            const val composeViewModel = "2.6.0-alpha01"
-
-        }
-
-        private const val composeActivity: String = "androidx.activity:activity-compose:${Version.activityCompose}"
-        private const val androidxComposeFoundation: String = "androidx.compose.foundation:foundation:${Version.androidxCompose}"
-        private const val androidxComposeFoundationLayout: String = "androidx.compose.foundation:foundation-layout:${Version.androidxCompose}"
-        private const val composeMaterial3: String = "androidx.compose.material3:material3:${Version.androidxComposeMaterial3}"
-        private const val composeRuntime: String = "androidx.compose.runtime:runtime:${Version.androidxCompose}"
-        private const val composeUITool: String = "androidx.compose.ui:ui-tooling:${Version.androidxCompose}"
-        private const val composeUIToolPreview: String = "androidx.compose.ui:ui-tooling-preview:${Version.androidxCompose}"
-        private const val composeHiltNavigation: String = "androidx.hilt:hilt-navigation-compose:${Version.androidxHiltNavigationCompose}"
-        private const val composeViewModel: String = "androidx.lifecycle:lifecycle-viewmodel-compose:${Version.composeViewModel}"
-        private const val composeAnimation: String = "androidx.compose.animation:animation:${Version.androidxCompose}"
-
-        override val components: List<String> =
-            listOf(composeActivity, androidxComposeFoundation, androidxComposeFoundationLayout, composeMaterial3,
-                composeRuntime, composeUITool, composeUIToolPreview, composeHiltNavigation, composeViewModel, composeAnimation )
-    }
-
     object Network : Libraries {
         object Version {
             const val okhttp: String = "5.0.0-alpha.2"

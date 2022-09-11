@@ -7,18 +7,31 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Qualifier
+import javax.inject.Singleton
 
 @[Module InstallIn(SingletonComponent::class)]
 interface DataModule {
 
     @Binds
-    fun bindTopRatedMovie(
-        topRatedMovieRepository: TopRatedMovieRepository
-    ) : MovieRepository
-
-    @Binds
+    @MovieRepositoryPopular
     fun bindPopularMovie(
         popularMovieRepository: PopularMovieRepository
     ) : MovieRepository
 
+    @Binds
+    @MovieRepositoryTopRated
+    fun bindTopRatedMovie(
+        topRatedMovieRepository: TopRatedMovieRepository
+    ) : MovieRepository
+
 }
+
+
+@Qualifier
+@Retention(AnnotationRetention.RUNTIME)
+annotation class MovieRepositoryPopular
+
+@Qualifier
+@Retention(AnnotationRetention.RUNTIME)
+annotation class MovieRepositoryTopRated

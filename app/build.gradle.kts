@@ -4,7 +4,6 @@ import Dependencies.Network
 import Dependencies.View
 import Dependencies.Coroutines
 import Dependencies.Test
-import Dependencies.Compose
 
 plugins {
     androidApplication
@@ -33,10 +32,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    buildFeatures {
-        compose = true
     }
 
     composeOptions {
@@ -80,13 +75,13 @@ hilt {
 dependencies {
 
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.5.21")
 
+    implementation(project(ProjectLib.model))
+    implementation(project(ProjectLib.featureMovie))
 
     implementAll(Coroutines.components)
     implementAll(View.components)
     implementAll(AndroidX.components)
-    implementAll(Compose.components)
     implementation(Network.moshi)
 
 

@@ -1,5 +1,7 @@
 package com.efhem.moviegalore.core.network.di
 
+import com.efhem.moviegalore.core.network.datasource.MovieNetworkDataSourceImp
+import com.efhem.moviegalore.core.network.datasourceimp.MovieNetworkDataSource
 import com.efhem.moviegalore.core.network.retrofit.NetworkApiFactory
 import com.efhem.moviegalore.core.network.retrofit.RetrofitNetworkApi
 import com.squareup.moshi.Moshi
@@ -20,5 +22,9 @@ internal object NetworkModule {
     @[Provides Singleton]
     fun provideApiService(moshi: Moshi): RetrofitNetworkApi =
         NetworkApiFactory.createApiService(moshi, true)
+
+    @[Provides Singleton]
+    fun provideMovieNetworkDataSource(api: RetrofitNetworkApi): MovieNetworkDataSource =
+        MovieNetworkDataSourceImp(api, "95b230b9dc5ca4b835cdb00a1aef6270")
 }
 
