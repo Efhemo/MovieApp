@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="18dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img"
+        android:background="@drawable/outlined_bg"
+        android:layout_width="120dp"
+        android:layout_height="140dp"/>
+
+    <TextView
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Avengers Endgame"
+        android:layout_height="wrap_content"/>
+
+    <RatingBar
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/RatingBar"
+        android:scaleX=".5"
+        android:rating="3.5"
+        android:scaleY=".5"
+        android:transformPivotX="0dp"
+        android:transformPivotY="0dp"
+        android:max="5"
+        />
+
+</LinearLayout>

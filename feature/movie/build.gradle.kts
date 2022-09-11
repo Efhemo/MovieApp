@@ -1,6 +1,8 @@
 import Dependencies.DI
 import Dependencies.Coroutines
 import Dependencies.Test
+import Dependencies.View
+import Dependencies.AndroidX
 
 
 plugins {
@@ -31,11 +33,17 @@ android {
             isMinifyEnabled = BuildTypeDebug.isMinifyEnabled
         }
     }
+
+    buildFeatures {
+        viewBinding  = true
+    }
 }
 
 dependencies {
 
     implementAll(Coroutines.components)
+    implementAll(View.components)
+    implementAll(AndroidX.components)
 
     implementation(project(ProjectLib.data))
     implementation(project(ProjectLib.model))

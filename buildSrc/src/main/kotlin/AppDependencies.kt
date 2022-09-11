@@ -80,7 +80,7 @@ object Dependencies {
             "androidx.constraintlayout:constraintlayout:${Version.constraintLayout}"
         const val recyclerView: String =
             "androidx.recyclerview:recyclerview:${Version.recyclerView}"
-        override val components: List<String> = listOf(appCompat, fragment)
+        override val components: List<String> = listOf(appCompat, fragment, constraintLayout, recyclerView, materialComponent)
     }
 
     object DI {
