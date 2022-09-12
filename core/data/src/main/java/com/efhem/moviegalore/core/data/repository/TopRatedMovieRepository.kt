@@ -42,7 +42,7 @@ class TopRatedMovieRepository @Inject constructor (
             }.onSuccess {
                 Result.Success(it)
             }.onFailure {
-                Result.Error(RuntimeException("Fetching fail"))
+                Result.Error(RuntimeException(it.message))
             }
         }
     }

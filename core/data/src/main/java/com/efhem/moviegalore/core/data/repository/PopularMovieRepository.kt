@@ -43,7 +43,7 @@ class PopularMovieRepository @Inject constructor(
             }.onSuccess {
                 emit(Result.Success(it))
             }.onFailure {
-                emit(Result.Error(RuntimeException("Fetching fail")))
+                emit(Result.Error(RuntimeException(it.message)))
             }
         }
     }

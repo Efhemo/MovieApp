@@ -9,6 +9,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.efhem.moviegalore.feature.movie.databinding.FragmentMovieBinding
+import com.efhem.moviegalore.feature.movie.utils.onReachBottom
+import com.efhem.moviegalore.feature.movie.utils.showSnackbar
 import com.efhem.moviegalore.feature.movie.utils.view_binding.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -20,13 +22,13 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
 
     private val viewModel : MovieViewModel by viewModels()
 
-    val popularAdapter by lazy {
+    private val popularAdapter by lazy {
         MovieAdapter( MovieClickListener { movie, position ->
 
         })
     }
 
-    val topAdapter by lazy {
+    private val topAdapter by lazy {
         MovieAdapter( MovieClickListener { movie, position ->
 
         })
@@ -35,22 +37,54 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupView()
+        observeTopRatedViewState()
+
+        observePopularViewState()
+
     }
 
-    private fun setupView(){
-
-        binding.popularRc.apply {
-            this.adapter = popularAdapter
-            this.layoutManager = LinearLayoutManager(requireContext()).apply {
-                orientation = LinearLayoutManager.HORIZONTAL
-            }
-        }
+    private fun observeTopRatedViewState(){
         binding.topRatedRc.apply {
             this.adapter = topAdapter
             this.layoutManager = LinearLayoutManager(requireContext()).apply {
                 orientation = LinearLayoutManager.HORIZONTAL
             }
+            onReachBottom { viewModel.onEvent(NextPageEvent.TopRatedNextPage) }
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.topRatedMovies.collect { movies ->
+                    topAdapter.submitList(movies)
+                }
+            }
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.popularUiState.collect { state ->
+                    if(state.isLoading){
+                        binding.progressTopRated.visibility = View.VISIBLE
+                    } else {
+                        binding.progressTopRated.visibility = View.GONE
+                    }
+                    val msg = state.errorMsg
+                    if(msg != null){
+                        showSnackbar(msg)
+                        viewModel.onEvent(NextPageEvent.IsShownPopularError)
+                    }
+                }
+            }
+        }
+    }
+
+    private fun observePopularViewState() {
+        binding.popularRc.apply {
+            this.adapter = popularAdapter
+            this.layoutManager = LinearLayoutManager(requireContext()).apply {
+                orientation = LinearLayoutManager.HORIZONTAL
+            }
+            onReachBottom { viewModel.onEvent(NextPageEvent.PopularNextPage) }
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
@@ -63,12 +97,21 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.topRatedMovies.collect { movies ->
-                    topAdapter.submitList(movies)
+                viewModel.topRatedUiState.collect { state ->
+                    if (state.isLoading) {
+                        binding.progressTopRated.visibility = View.VISIBLE
+                    } else {
+                        binding.progressTopRated.visibility = View.GONE
+                    }
+
+                    val msg = state.errorMsg
+                    if (msg != null) {
+                        showSnackbar(msg)
+                        viewModel.onEvent(NextPageEvent.IsShownTopRatedError)
+                    }
                 }
             }
         }
-
     }
 
 }

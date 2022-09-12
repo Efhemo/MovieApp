@@ -23,7 +23,7 @@ class MovieReviewRepositoryImp @Inject constructor(
             }.onSuccess {
                 Result.Success(it.results.map(NetworkMovieReview::asExternal))
             }.onFailure {
-                Result.Error(RuntimeException("Fetching fail"))
+                Result.Error(RuntimeException(it.message))
             }
         }
     }
