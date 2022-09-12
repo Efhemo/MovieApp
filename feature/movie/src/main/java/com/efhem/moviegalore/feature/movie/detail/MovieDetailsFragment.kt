@@ -44,7 +44,7 @@ class MovieDetailsFragment: Fragment(R.layout.fragment_movie_details) {
     }
 
 
-    fun setView(movie: Movie){
+    private fun setView(movie: Movie){
 
         binding.apply {
             with(movie){
@@ -53,7 +53,7 @@ class MovieDetailsFragment: Fragment(R.layout.fragment_movie_details) {
                 content.tvDesc.text = overview
                 content.tvYear.text = releaseDate
 
-                Glide.with(requireContext()).load("https://image.tmdb.org/t/p/w200/$backdropPath")
+                Glide.with(requireContext()).load("https://image.tmdb.org/t/p/w500/$backdropPath")
                     .apply(RequestOptions.centerCropTransform())
                     .diskCacheStrategy(DiskCacheStrategy.RESOURCE).into(binding.expandedImage)
 

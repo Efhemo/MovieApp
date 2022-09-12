@@ -27,10 +27,6 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
 
     private val viewModel : MovieViewModel by viewModels()
 
-    private val navController: NavController by lazy {
-        findNavController()
-    }
-
     private val popularAdapter by lazy {
         MovieAdapter( MovieClickListener { movie, _ ->
             toDetails(movie)
@@ -79,7 +75,7 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.popularUiState.collect { state ->
+                viewModel.topRatedUiState.collect { state ->
                     if(state.isLoading){
                         binding.progressTopRated.visibility = View.VISIBLE
                     } else {
@@ -114,17 +110,17 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.topRatedUiState.collect { state ->
+                viewModel.popularUiState.collect { state ->
                     if (state.isLoading) {
-                        binding.progressTopRated.visibility = View.VISIBLE
+                        binding.progressPopuular.visibility = View.VISIBLE
                     } else {
-                        binding.progressTopRated.visibility = View.GONE
+                        binding.progressPopuular.visibility = View.GONE
                     }
 
                     val msg = state.errorMsg
                     if (msg != null) {
                         showSnackbar(msg)
-                        viewModel.onEvent(NextPageEvent.IsShownTopRatedError)
+                        viewModel.onEvent(NextPageEvent.IsShownPopularError)
                     }
                 }
             }
