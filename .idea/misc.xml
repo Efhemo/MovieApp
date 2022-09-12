@@ -12,6 +12,9 @@
         <entry key="feature/movie/src/main/res/drawable/outlined_bg.xml" value="0.1685" />
         <entry key="feature/movie/src/main/res/layout/content_scrolling.xml" value="0.12993920972644377" />
         <entry key="feature/movie/src/main/res/layout/fragment_movie.xml" value="0.25" />
+        <entry key="feature/movie/src/main/res/layout/fragment_movie_detail.xml" value="0.157548125633232" />
+        <entry key="feature/movie/src/main/res/layout/fragment_movie_details.xml" value="0.157548125633232" />
+        <entry key="feature/movie/src/main/res/layout/movie_detail.xml" value="0.157548125633232" />
         <entry key="feature/movie/src/main/res/layout/movie_details.xml" value="0.18161094224924013" />
         <entry key="feature/movie/src/main/res/layout/movie_item_view.xml" value="0.335" />
       </map>

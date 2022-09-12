@@ -37,6 +37,7 @@ object Dependencies {
         }
 
         private const val coreKtx: String = "androidx.core:core-ktx:${Version.coreKtx}"
+        private const val androidSupport: String = "androidx.legacy:legacy-support-v4:1.0.0"
         private const val navigationFragmentKtx: String =
             "androidx.navigation:navigation-fragment-ktx:${Version.navigation}"
         private const val navigationUiKtx: String =
@@ -54,7 +55,7 @@ object Dependencies {
         override val components: List<String>
             get() = listOf(
                 coreKtx, navigationFragmentKtx, navigationUiKtx, multiDex, activity,
-                lifeCycleCommon, viewModel, livedata
+                lifeCycleCommon, viewModel, livedata, androidSupport
             )
     }
 

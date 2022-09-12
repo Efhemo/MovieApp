@@ -36,9 +36,6 @@ class MovieAdapter(private val movieClickListener: MovieClickListener) :
             }
         }
 
-
-
-        //holder.bind.executePendingBindings()
     }
 
 
