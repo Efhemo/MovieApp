@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit
 
 public object NetworkApiFactory {
 
-    private const val BASE_URL: String = "http://api.themoviedb.org/3/movie/"
+    private const val BASE_URL: String = "http://api.themoviedb.org/3/"
 
     public fun createApiService(moshi: Moshi, isDebug: Boolean): RetrofitNetworkApi {
         val okHttpClient: OkHttpClient = makeOkHttpClient(

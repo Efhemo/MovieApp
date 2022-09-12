@@ -67,6 +67,7 @@ object Dependencies {
             const val fragment: String = "1.5.0"
             const val cardView: String = "1.0.0"
             const val recyclerView: String = "1.2.1"
+            const val glide = "4.11.0"
         }
 
         const val appCompat: String = "androidx.appcompat:appcompat:${Version.appCompat}"
@@ -80,7 +81,9 @@ object Dependencies {
             "androidx.constraintlayout:constraintlayout:${Version.constraintLayout}"
         const val recyclerView: String =
             "androidx.recyclerview:recyclerview:${Version.recyclerView}"
-        override val components: List<String> = listOf(appCompat, fragment, constraintLayout, recyclerView, materialComponent)
+        private const val glide = "com.github.bumptech.glide:glide:${Version.glide}"
+
+        override val components: List<String> = listOf(appCompat, fragment, constraintLayout, recyclerView, materialComponent, glide)
     }
 
     object DI {

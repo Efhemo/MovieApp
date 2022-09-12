@@ -13,6 +13,7 @@
         android:layout_height="140dp"/>
 
     <TextView
+        android:id="@+id/title"
         android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_marginTop="6dp"
@@ -20,16 +21,19 @@
         android:layout_height="wrap_content"/>
 
     <RatingBar
+        android:id="@+id/rating"
         android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/RatingBar"
         android:scaleX=".5"
-        android:rating="3.5"
         android:scaleY=".5"
+        android:numStars="5"
+        android:isIndicator="true"
         android:transformPivotX="0dp"
         android:transformPivotY="0dp"
-        android:max="5"
+        android:max="10"
+        android:stepSize="2"
         />
 
 </LinearLayout>
